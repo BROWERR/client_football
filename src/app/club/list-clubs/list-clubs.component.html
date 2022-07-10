@@ -1,0 +1,47 @@
+<br><br><br>
+<div class="up">
+  <button routerLink="/match" mat-flat-button color="primary">Матчи</button>
+  <h2 style="text-align: center">Russian championship table</h2>
+  <button class="add" mat-flat-button color="primary" routerLink="/club/add">Add Club</button>
+</div>
+
+<div style="text-align: center; " >
+  <br>
+  <table class="table" style="display: inline-block">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Club name</th>
+        <th>Games</th>
+        <th>Goals</th>
+        <th>Points</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let club of clubs; let i = index">
+        <td>{{i + 1}}</td>
+        <td><a style="color: black" [routerLink]="['info',club.id]">{{club.name}}</a></td>
+        <td>{{club.games}}</td>
+        <td>{{club.goals}}</td>
+        <td>{{club.points}}</td>
+        <td>
+          <button mat-flat-button color="warn" style="font-size: 12px; background-color: black"
+                  (click)="removeClub(club)"
+          >Delete
+          </button>
+        </td>
+        <td>
+          <button mat-flat-button color="accent" style="font-size: 12px; background-color: darkred"
+                  [routerLink]="[club.id]">Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
+
+
+

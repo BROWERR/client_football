@@ -1,0 +1,39 @@
+<br><br><br>
+<div class="up">
+  <br><button mat-flat-button color="primary" (click)="back()" >Back</button>
+  <h2 style="text-align: center">Russian league matches</h2>
+  <button mat-flat-button color="primary" routerLink="/match/add">Add Match</button>
+</div>
+
+<div style="text-align: center; " >
+  <br>
+  <table class="table" style="display: inline-block">
+    <thead>
+    <tr>
+      <th>Home</th>
+      <th>Final score</th>
+      <th>Guest</th>
+      <th>Date</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let match of matches">
+      <td>{{match.club1.name}}</td>
+      <td>{{match.goals_first}}:{{match.goals_second}}</td>
+      <td>{{match.club2.name}}</td>
+      <td>{{match.date}}</td>
+      <td>
+        <button mat-flat-button color="warn" style="font-size: 12px; background-color: black"
+                (click)="removeMatch(match)"
+        >Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
+
+
+

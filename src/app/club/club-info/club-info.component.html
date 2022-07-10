@@ -1,0 +1,48 @@
+<div class="up">
+  <button id="add" mat-flat-button color="primary" routerLink="/club">Back</button>
+  <h2 style="text-align: center">Table of club players</h2>
+  <button id="back" [routerLink]="['player-add']" mat-flat-button color="primary">Add player</button>
+</div>
+
+
+<div style="text-align: center" >
+  <h2 *ngIf="players.length == 0" style="margin-top: 10px">В данном клубе еще нет игроков!</h2>
+  <table class="table" style="display: inline-block" *ngIf="players.length>0">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Position</th>
+        <th>Games</th>
+        <th>Goals</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{player.name}}</td>
+        <td>{{player.surname}}</td>
+        <td>{{player.position}}</td>
+        <td>{{player.games}}</td>
+        <td>{{player.goals}}</td>
+        <td>
+          <button mat-flat-button color="warn" style="font-size: 12px;background-color: black"
+                  (click)="removePlayer(player)"
+          >Delete
+          </button>
+        </td>
+        <td>
+          <button mat-flat-button color="accent" style="font-size: 12px;background-color: darkred"
+                  [routerLink]="['update',player.id]">Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
+
