@@ -48,7 +48,7 @@ export class PlayerAddComponent implements OnInit {
     }).subscribe(data=>{
       this.addPlayer=data;
     })
-    this.snackbar.open('Игрок успешно добавлен!','Ладушки!',{
+    this.snackbar.open('Player successfully added!','OK',{
       duration: 3000
     });
     this.addForm.reset();

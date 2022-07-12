@@ -67,7 +67,7 @@ export class MatchAddComponent implements OnInit {
     },).subscribe(data=>{
       this.addMatch=data;
     })
-    this.snackbar.open('Матч успешно добавлен!','OK',{
+    this.snackbar.open('Match added successfully!','OK',{
       duration: 3000
     });
     this.addForm.reset();

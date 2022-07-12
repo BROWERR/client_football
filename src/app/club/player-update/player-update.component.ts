@@ -51,7 +51,7 @@ export class PlayerUpdateComponent implements OnInit {
     }).subscribe(data => {
       this.updatePlayer = data;
     })
-    this.snackbar.open('Игрок успешно обновлен!','Окей',{
+    this.snackbar.open('The player has been successfully updated!','OK',{
       duration: 2000
     });
   }

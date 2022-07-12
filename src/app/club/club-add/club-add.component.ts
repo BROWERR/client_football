@@ -40,7 +40,7 @@ export class ClubAddComponent implements OnInit {
     }).subscribe(data=>{
       this.addClub=data;
     })
-    this.snackbar.open('Клуб успешно добавлен!','Ладушки',{
+    this.snackbar.open('Club successfully added!','OK',{
       duration: 3000
     });
     this.addForm.reset();

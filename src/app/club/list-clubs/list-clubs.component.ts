@@ -21,7 +21,7 @@ export class ListClubsComponent implements OnInit {
   }
 
   removeClub(club: Club):void{
-    const message = confirm('Вы действительно хотите удалить этот клуб?')
+    const message = confirm('Do you really want to delete this club?')
     if(message){
       this.clubService.deleteClub(club.id).subscribe(()=>{
         this.clubs.splice(<number>club.id,1);

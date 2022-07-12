@@ -48,7 +48,7 @@ export class ClubUpdateComponent implements OnInit {
     }).subscribe(data => {
       this.updateClub = data;
     })
-    this.snackbar.open('Клуб успешно обновлен!','Окей',{
+    this.snackbar.open('The club has been successfully updated!','OK',{
       duration: 2000
     });
   }

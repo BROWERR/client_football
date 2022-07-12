@@ -27,7 +27,7 @@ export class ClubInfoComponent implements OnInit {
   }
 
   removePlayer(player:Player):void{
-    const result = confirm('Вы действительно хотите удалить этого игрока?');
+    const result = confirm('Do you really want to remove this player?');
     if (result) {
       this.playerService.deletePlayer(player.id).subscribe(() => {
         this.players.splice(<number>player.id, 1);
